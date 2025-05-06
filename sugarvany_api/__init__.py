@@ -1,1 +1,1 @@
-"""Sugarvany API package.""" 
+"""Sugarvany API package."""

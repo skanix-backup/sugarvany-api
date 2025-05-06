@@ -7,4 +7,4 @@ class HealthService:
     @staticmethod
     async def check_health() -> HealthResponse:
         """Check application health."""
-        return HealthResponse(status="pong") 
+        return HealthResponse(status="pong")

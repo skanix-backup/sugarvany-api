@@ -1,4 +1,5 @@
 import multiprocessing
+
 from sugarvany_api.core.config import get_settings
 
 settings = get_settings()
@@ -8,7 +9,9 @@ HOST = "0.0.0.0"
 PORT = 8000
 
 # Worker configuration
-WORKERS = multiprocessing.cpu_count() * 2 + 1  # Formula for optimal worker count
+WORKERS = (
+    multiprocessing.cpu_count() * 2 + 1
+)  # Formula for optimal worker count
 
 # Logging configuration
 LOG_LEVEL = "info"
@@ -31,7 +34,13 @@ LOG_CONFIG = {
     },
     "loggers": {
         "uvicorn": {"handlers": ["default"], "level": LOG_LEVEL},
-        "uvicorn.error": {"handlers": ["default"], "level": LOG_LEVEL},
-        "uvicorn.access": {"handlers": ["default"], "level": LOG_LEVEL},
+        "uvicorn.error": {
+            "handlers": ["default"],
+            "level": LOG_LEVEL,
+        },
+        "uvicorn.access": {
+            "handlers": ["default"],
+            "level": LOG_LEVEL,
+        },
     },
-} 
+}
